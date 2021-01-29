@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MdAddShoppingCart } from 'react-icons/md';
-import api from '../../services/api';
 import db from '../../db.json';
 
 import * as CartActions from '../../store/modules/cart/actions';

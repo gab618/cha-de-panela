@@ -3,7 +3,7 @@ import { darken } from 'polished';
 
 export const Container = styled.div`
   padding: 30px;
-  background: #1e2328;
+  background: #fff;
   border-radius: 4px;
 
   footer {
@@ -13,7 +13,7 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      background: #24494b;
+      background: #7209c1;
       color: #ddd;
       border: 0;
       border-radius: 4px;
@@ -40,7 +40,7 @@ export const ProductTable = styled.table`
 
   tbody td {
     padding: 12px;
-    border-bottom: 1px solid #24494b;
+    border-bottom: 1px solid #eee;
   }
 
   img {
@@ -48,7 +48,7 @@ export const ProductTable = styled.table`
   }
 
   strong {
-    color: #ddd;
+    color: #333;
     display: block;
   }
 
@@ -64,12 +64,12 @@ export const ProductTable = styled.table`
     align-items: center;
 
     input {
-      border: 1px solid #24494b;
+      border: 1px solid #ddd;
       border-radius: 4px;
       padding: 6px;
       width: 50px;
-      background: #1e2328;
-      color: #eee4d0;
+      /* background: #1e2328; */
+      color: #666;
     }
 
     button {
@@ -96,12 +96,12 @@ export const Total = styled.div`
   align-items: baseline;
 
   span {
-    color: #999;
+    color: #333;
     font-weight: bold;
   }
 
   strong {
-    color: #ddd;
+    color: #333;
     font-size: 28px;
     margin-left: 5px;
   }

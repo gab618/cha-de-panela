@@ -12,7 +12,7 @@ function* addToCart({ id }) {
     state.cart.find((p) => p.id === id)
   );
 
-  const stockAmount = 3;
+  const stockAmount = 10;
   const currentAmount = productExists ? productExists.amount : 0;
 
   const amount = currentAmount + 1;
@@ -40,8 +40,7 @@ function* addToCart({ id }) {
 function* updateAmount({ id, amount }) {
   if (amount <= 0) return;
 
-  const stock = db[id - 1];
-  const stockAmount = stock.amount;
+  const stockAmount = 10;
 
   if (amount > stockAmount) {
     toast.error('Quantidade não disponível no estoque');
