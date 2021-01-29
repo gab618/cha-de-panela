@@ -30,7 +30,7 @@ function* addToCart({ id }) {
   if (productExists) {
     yield put(updateAmountSuccess(id, amount));
   } else {
-    const response = db[id];
+    const response = db[id - 1];
 
     const data = {
       ...response,
@@ -45,7 +45,7 @@ function* addToCart({ id }) {
 function* updateAmount({ id, amount }) {
   if (amount <= 0) return;
 
-  const stock = db[id];
+  const stock = db[id - 1];
   const stockAmount = stock.amount;
 
   if (amount > stockAmount) {

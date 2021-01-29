@@ -28,5 +28,17 @@
     "title": "Dispenser para detergente / porta esponja e sabão",
     "price": 39.9,
     "image": "https://http2.mlstatic.com/D_NQ_NP_841139-MLB31643365371_072019-O.webp"
+  },
+  {
+    "id": 6,
+    "title": "Porta Talheres Bambu com 5 divisórias",
+    "price": 44.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_926029-MLB44255912055_122020-O.webp"
+  },
+  {
+    "id": 7,
+    "title": "Kit 1 Vassoura, 1 Rodo e uma Pá",
+    "price": 29.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_644101-MLB44654584590_012021-O.webp"
   }
 ]
