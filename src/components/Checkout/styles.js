@@ -110,3 +110,30 @@ export const Total = styled.div`
     margin-left: 5px;
   }
 `;
+
+export const SuccessContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > h2 {
+    text-align: center;
+  }
+
+  > svg {
+    margin-top: 16px;
+  }
+
+  > span {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  > p,
+  strong {
+    margin-top: 8px;
+    font-size: 9px;
+    color: #999;
+  }
+`;

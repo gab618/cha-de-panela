@@ -5,11 +5,12 @@ import { bindActionCreators } from 'redux';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import QRCode from 'react-qr-code';
 import * as CartActions from '../../store/modules/cart/actions';
 import formatBRL from '../../utils/formatBRL';
 import Pix from '../../utils/Pix';
 
-import { Container, Total } from './styles';
+import { Container, Total, SuccessContent } from './styles';
 
 function Checkout({ total, setStep }) {
   const [name, setName] = useState('');
@@ -45,62 +46,79 @@ function Checkout({ total, setStep }) {
 
   return (
     <Container>
-      <Typography variant="h6" gutterBottom>
-        Pagamento
-      </Typography>
-      <form onSubmit={handleSubmit}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <TextField
-              required
-              id="name"
-              label="Nome"
-              fullWidth
-              autoComplete="given-name"
-              value={name}
-              onChange={handleNameChange}
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              required
-              id="phone"
-              label="Celular"
-              fullWidth
-              autoComplete="tel"
-              value={phone}
-              onChange={handlePhoneChange}
-            />
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <TextField
-              id="msg"
-              label="Mensagem"
-              helperText={`Deixe aqui uma pequena mensagem para os futuros casados :) - ${msg.length}/40`}
-              fullWidth
-              value={msg}
-              inputProps={{ maxLength: 40 }}
-              onChange={handleMsgChange}
-            />
-          </Grid>
-        </Grid>
-        <footer>
-          <Total>
-            <span>TOTAL</span>
-            <strong>{formatBRL(total)}</strong>
-          </Total>
-          <div>
-            <button
-              className="prev-button"
-              type="button"
-              onClick={() => setStep(0)}
-            >
-              Voltar
-            </button>
-            <button type="submit">Gerar Pagamento</button>
-          </div>
-        </footer>
-      </form>
+      {pixString.length === 0 ? (
+        <>
+          <Typography variant="h6" gutterBottom>
+            Pagamento
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  required
+                  id="name"
+                  label="Nome"
+                  fullWidth
+                  autoComplete="given-name"
+                  value={name}
+                  onChange={handleNameChange}
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  required
+                  id="phone"
+                  label="Celular"
+                  fullWidth
+                  autoComplete="tel"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                />
+              </Grid>
+              <Grid item xs={12} md={12}>
+                <TextField
+                  id="msg"
+                  label="Mensagem"
+                  helperText={`Deixe aqui uma pequena mensagem para os futuros casados :) - ${msg.length}/40`}
+                  fullWidth
+                  value={msg}
+                  inputProps={{ maxLength: 40 }}
+                  onChange={handleMsgChange}
+                />
+              </Grid>
+            </Grid>
+            <footer>
+              <Total>
+                <span>TOTAL</span>
+                <strong>{formatBRL(total)}</strong>
+              </Total>
+              <div>
+                <button
+                  className="prev-button"
+                  type="button"
+                  onClick={() => setStep(0)}
+                >
+                  Voltar
+                </button>
+                <button type="submit">Gerar Pagamento</button>
+              </div>
+            </footer>
+          </form>
+        </>
+      ) : (
+        <SuccessContent>
+          <h2>Muito obrigado pelo presente, {name}!</h2>
+          <QRCode value={pixString} />
+          <span>
+            Para finalizar, basta realizar o pagamento escaneando o código Pix
+            abaixo :)
+          </span>
+          <p>
+            Caso alguma coisa de errado, minha chave pix é{' '}
+            <strong>{process.env.REACT_APP_PIX_KEY}</strong>
+          </p>
+        </SuccessContent>
+      )}
     </Container>
   );
 }
