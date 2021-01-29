@@ -11,6 +11,7 @@ import {
 import * as CartActions from '../../store/modules/cart/actions';
 
 import { Container, ProductTable, Total } from './styles';
+import formatBRL from '../../utils/formatBRL';
 
 function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
   function increment(product) {
@@ -41,7 +42,7 @@ function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
               </td>
               <td>
                 <strong>{product.title}</strong>
-                <span>{product.price}</span>
+                <span>{formatBRL(product.price)}</span>
               </td>
               <td>
                 <div>
@@ -55,7 +56,7 @@ function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
                 </div>
               </td>
               <td>
-                <strong>{product.subtotal}</strong>
+                <strong>{formatBRL(product.subtotal)}</strong>
               </td>
               <td>
                 <button
@@ -73,7 +74,7 @@ function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
         <button type="button">Finalizar pedido</button>
         <Total>
           <span>TOTAL</span>
-          <strong>{total}</strong>
+          <strong>{formatBRL(total)}</strong>
         </Total>
       </footer>
     </Container>

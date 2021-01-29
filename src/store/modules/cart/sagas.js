@@ -1,11 +1,9 @@
-import { call, select, put, all, takeLatest } from 'redux-saga/effects';
+import { select, put, all, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
-import api from '../../../services/api';
 import history from '../../../services/history';
 
 import db from '../../../db.json';
-import dbStock from '../../../dbStock.json';
 
 import { addToCartSuccess, updateAmountSuccess } from './actions';
 
@@ -14,10 +12,7 @@ function* addToCart({ id }) {
     state.cart.find((p) => p.id === id)
   );
 
-  const stock = dbStock;
-  console.log(dbStock);
-
-  const stockAmount = stock.amount;
+  const stockAmount = 3;
   const currentAmount = productExists ? productExists.amount : 0;
 
   const amount = currentAmount + 1;

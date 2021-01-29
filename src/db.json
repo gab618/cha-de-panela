@@ -40,5 +40,59 @@
     "title": "Kit 1 Vassoura, 1 Rodo e uma Pá",
     "price": 29.9,
     "image": "https://http2.mlstatic.com/D_NQ_NP_644101-MLB44654584590_012021-O.webp"
+  },
+  {
+    "id": 8,
+    "title": "Kit 3 lixeiras de aço inox",
+    "price": 79.9,
+    "image": "https://images-americanas.b2w.io/produtos/01/00/img/2268051/4/2268051423_1GG.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Kit com 12 panos de prato",
+    "price": 39.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_670840-MLB41999480734_052020-F.webp"
+  },
+  {
+    "id": 10,
+    "title": "12 panos de microfibra para limpeza geral",
+    "price": 34.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_671032-MLB31018366049_062019-O.webp"
+  },
+  {
+    "id": 11,
+    "title": "15 panos de limpeza xadrez",
+    "price": 14.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_721836-MLB31134796232_062019-O.webp"
+  },
+  {
+    "id": 12,
+    "title": "Escorredor de Louças",
+    "price": 34.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_887861-MLB44562890186_012021-O.webp"
+  },
+  {
+    "id": 13,
+    "title": "Jarra de Suco de 1 litro",
+    "price": 14.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_939861-MLB31497733724_072019-O.webp"
+  },
+  {
+    "id": 14,
+    "title": "Kit de Utensílios para Cozinha",
+    "price": 24.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_751895-MLB31182332761_062019-O.webp"
+  },
+  {
+    "id": 15,
+    "title": "Jogo com 6 Copos",
+    "price": 49.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_859019-MLB43785287116_102020-O.webp"
+  },
+  {
+    "id": 16,
+    "title": "Jogo de Talheres Inox 24 peças",
+    "price": 54.9,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_858872-MLB42110250415_062020-O.webp"
   }
 ]
