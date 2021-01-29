@@ -1,44 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { MdAddShoppingCart } from 'react-icons/md';
 import api from '../../services/api';
+import db from '../../db.json';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
 import { ProductList } from './styles';
 
-class Home extends Component {
-  state = {
-    products: [],
-  };
+function Home({ amount, addToCartRequest }) {
+  const [products, setProducts] = useState([]);
 
-  async componentDidMount() {
-    const response = await api.get('products');
-    this.setState({ products: response.data });
+  useEffect(() => {
+    function loadProducts() {
+      const response = db;
+      setProducts(response);
+    }
+
+    loadProducts();
+  }, [products]);
+
+  function handleAddToCart(id) {
+    addToCartRequest(id);
   }
 
-  handleAddToCart = (id) => {
-    const { addToCartRequest } = this.props;
-
-    addToCartRequest(id);
-  };
-
-  render() {
-    const { products } = this.state;
-    const { amount } = this.props;
-
-    return (
-      <ProductList>
-        {products.map((product) => (
+  return (
+    <ProductList>
+      {products &&
+        products.map((product) => (
           <li key={product.id}>
             <img src={product.image} alt={product.title} />
             <strong>{product.title}</strong>
             <span>{product.price}</span>
-            <button
-              type="button"
-              onClick={() => this.handleAddToCart(product.id)}
-            >
+            <button type="button" onClick={() => handleAddToCart(product.id)}>
               <div>
                 <MdAddShoppingCart size={16} color="#ddd" />
                 {amount[product.id] || 0}
@@ -47,9 +42,8 @@ class Home extends Component {
             </button>
           </li>
         ))}
-      </ProductList>
-    );
-  }
+    </ProductList>
+  );
 }
 
 const mapStateToProps = (state) => ({
