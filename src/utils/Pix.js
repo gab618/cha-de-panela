@@ -2,7 +2,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-cond-assign */
 /* eslint-disable no-underscore-dangle */
-module.exports = class Pix {
+export default class Pix {
   constructor(pixKey, description, merchantName, merchantCity, txid, amount) {
     this.pixKey = pixKey;
     this.description = description;
@@ -109,4 +109,4 @@ module.exports = class Pix {
     // RETORNA CÓDIGO CRC16 DE 4 CARACTERES
     return `${this.ID_CRC16}04${dechex(resultado).toUpperCase()}`;
   }
-};
+}
