@@ -4,6 +4,9 @@ import { toast } from 'react-toastify';
 import api from '../../../services/api';
 import history from '../../../services/history';
 
+import db from '../../../db.json';
+import dbStock from '../../../dbStock.json';
+
 import { addToCartSuccess, updateAmountSuccess } from './actions';
 
 function* addToCart({ id }) {
@@ -11,9 +14,10 @@ function* addToCart({ id }) {
     state.cart.find((p) => p.id === id)
   );
 
-  const stock = yield call(api.get, `/stock/${id}`);
+  const stock = dbStock;
+  console.log(dbStock);
 
-  const stockAmount = stock.data.amount;
+  const stockAmount = stock.amount;
   const currentAmount = productExists ? productExists.amount : 0;
 
   const amount = currentAmount + 1;
@@ -26,10 +30,10 @@ function* addToCart({ id }) {
   if (productExists) {
     yield put(updateAmountSuccess(id, amount));
   } else {
-    const response = yield call(api.get, `/products/${id}`);
+    const response = db[id];
 
     const data = {
-      ...response.data,
+      ...response,
       amount: 1,
     };
 
@@ -41,8 +45,8 @@ function* addToCart({ id }) {
 function* updateAmount({ id, amount }) {
   if (amount <= 0) return;
 
-  const stock = yield call(api.get, `stock/${id}`);
-  const stockAmount = stock.data.amount;
+  const stock = db[id];
+  const stockAmount = stock.amount;
 
   if (amount > stockAmount) {
     toast.error('Quantidade não disponível no estoque');
