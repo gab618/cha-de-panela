@@ -33,15 +33,19 @@ function Home({ amount, addToCartRequest }) {
         {products &&
           products.map((product) => (
             <li key={product.id}>
-              <img src={product.image} alt={product.title} />
-              <strong>{product.title}</strong>
-              <span>{formatBRL(product.price)}</span>
+              <div className="img-wrapper">
+                <img src={product.image} alt={product.title} />
+              </div>
+              <div className="product-info">
+                <strong>{product.title}</strong>
+                <span>{formatBRL(product.price)}</span>
+              </div>
               <button type="button" onClick={() => handleAddToCart(product.id)}>
                 <div>
-                  <MdAddShoppingCart size={16} color="#ddd" />
+                  <MdAddShoppingCart size={16} color="#FFF" />
                   {amount[product.id] || 0}
                 </div>
-                <span>ADICIONAR AO CARRINHO</span>
+                <span>COMPRAR</span>
               </button>
             </li>
           ))}
