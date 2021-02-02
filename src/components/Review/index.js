@@ -2,15 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {
-  MdRemoveCircleOutline,
-  MdAddCircleOutline,
-  MdDelete,
-} from 'react-icons/md';
+import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-import { Container, ProductTable, Total } from './styles';
+import {
+  Container,
+  ProductTable,
+  TotalContainer,
+  TableHeader,
+  TableItem,
+  IncrementBox,
+  RemoveButton,
+} from './styles';
 import formatBRL from '../../utils/formatBRL';
 
 function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
@@ -25,56 +29,50 @@ function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
   return (
     <Container>
       <ProductTable>
-        <thead>
-          <tr>
-            <th />
-            <th>PRODUTO</th>
-            <th>QTDE</th>
-            <th>SUBTOTAL</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {cart.map((product) => (
-            <tr key={product.id}>
-              <td>
+        <TableHeader>
+          <div className="desc">Descrição</div>
+          <div className="amount">Quantidade</div>
+          <div className="price">Valor</div>
+        </TableHeader>
+
+        {cart.map((product) => (
+          <TableItem key={product.id}>
+            <div className="desc">
+              <div className="img-wrapper">
                 <img src={product.image} alt={product.title} />
-              </td>
-              <td>
-                <strong>{product.title}</strong>
-                <span>{formatBRL(product.price)}</span>
-              </td>
-              <td>
-                <div>
-                  <button type="button" onClick={() => decrement(product)}>
-                    <MdRemoveCircleOutline size={20} color="#24494b" />
-                  </button>
-                  <input type="number" readOnly value={product.amount} />
-                  <button type="button" onClick={() => increment(product)}>
-                    <MdAddCircleOutline size={20} color="#24494b" />
-                  </button>
-                </div>
-              </td>
-              <td>
-                <strong>{formatBRL(product.subtotal)}</strong>
-              </td>
-              <td>
-                <button
-                  type="button"
-                  onClick={() => removeFromCart(product.id)}
-                >
-                  <MdDelete size={20} color="#24494b" />
+              </div>
+              <p>{product.title}</p>
+            </div>
+
+            <div className="amount">
+              <IncrementBox>
+                <button type="button" onClick={() => decrement(product)}>
+                  <MdRemoveCircleOutline size={20} />
                 </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+                <div>{product.amount}</div>
+                <button type="button" onClick={() => increment(product)}>
+                  <MdAddCircleOutline size={20} />
+                </button>
+              </IncrementBox>
+              <RemoveButton onClick={() => removeFromCart(product.id)}>
+                Remover
+              </RemoveButton>
+            </div>
+
+            <div className="price">
+              <div>{formatBRL(product.subtotal)}</div>
+            </div>
+          </TableItem>
+        ))}
+        <TotalContainer>
+          <div className="desc" />
+          <div className="amount">Total</div>
+          <div className="price">
+            <strong>{formatBRL(total)}</strong>
+          </div>
+        </TotalContainer>
       </ProductTable>
       <footer>
-        <Total>
-          <span>TOTAL</span>
-          <strong>{formatBRL(total)}</strong>
-        </Total>
         <button type="button" onClick={() => setStep(1)}>
           Próximo
         </button>
