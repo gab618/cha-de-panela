@@ -9,9 +9,7 @@ import logo from '../../assets/images/logo.png';
 function Header({ cartSize }) {
   return (
     <Container>
-      <Link to="/">
-        <img src={logo} alt="LolShop" />
-      </Link>
+      <Link to="/">M & T</Link>
 
       <Cart to="/cart">
         <div>

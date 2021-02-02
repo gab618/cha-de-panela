@@ -6,6 +6,9 @@ export const ProductList = styled.ul`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   list-style: none;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 20px 50px;
 
   @media screen and (max-width: 992px) {
     grid-template-columns: repeat(3, 1fr);
