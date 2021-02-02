@@ -91,6 +91,7 @@ export const MenuItem = styled(Link)`
   align-items: center;
   text-decoration: none;
   transition: opacity 0.25s;
+  position: relative;
 
   &:hover {
     opacity: 0.7;
@@ -99,5 +100,21 @@ export const MenuItem = styled(Link)`
   div {
     text-align: right;
     margin-right: 10px;
+  }
+
+  .items-counter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    background: var(--menu);
+    color: #fff;
+    border-radius: 50%;
+    top: 0px;
+    right: -18px;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    line-height: 1.6;
+    visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
   }
 `;

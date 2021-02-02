@@ -23,17 +23,17 @@ function Header({ cartSize }) {
                 <div>
                   <strong>Presentes</strong>
                 </div>
-                <FaGift size={18} />
+                <FaGift size={22} />
               </MenuItem>
             </li>
             <div className="divider" />
             <li>
-              <MenuItem to="/cart">
+              <MenuItem to="/cart" show={!!cartSize}>
                 <div>
                   <strong>Meu carrinho</strong>
-                  {/* <span>{cartSize} itens</span> */}
+                  <span className="items-counter">{cartSize}</span>
                 </div>
-                <FaShoppingCart size={18} />
+                <FaShoppingCart size={22} />
               </MenuItem>
             </li>
           </MenuWrapper>
