@@ -7,6 +7,7 @@ import db from '../../db.json';
 import * as CartActions from '../../store/modules/cart/actions';
 
 import { ProductList } from './styles';
+import NewHomePanel from '../../components/NewHomePanel';
 import formatBRL from '../../utils/formatBRL';
 
 function Home({ amount, addToCartRequest }) {
@@ -26,23 +27,26 @@ function Home({ amount, addToCartRequest }) {
   }
 
   return (
-    <ProductList>
-      {products &&
-        products.map((product) => (
-          <li key={product.id}>
-            <img src={product.image} alt={product.title} />
-            <strong>{product.title}</strong>
-            <span>{formatBRL(product.price)}</span>
-            <button type="button" onClick={() => handleAddToCart(product.id)}>
-              <div>
-                <MdAddShoppingCart size={16} color="#ddd" />
-                {amount[product.id] || 0}
-              </div>
-              <span>ADICIONAR AO CARRINHO</span>
-            </button>
-          </li>
-        ))}
-    </ProductList>
+    <>
+      <NewHomePanel />
+      <ProductList>
+        {products &&
+          products.map((product) => (
+            <li key={product.id}>
+              <img src={product.image} alt={product.title} />
+              <strong>{product.title}</strong>
+              <span>{formatBRL(product.price)}</span>
+              <button type="button" onClick={() => handleAddToCart(product.id)}>
+                <div>
+                  <MdAddShoppingCart size={16} color="#ddd" />
+                  {amount[product.id] || 0}
+                </div>
+                <span>ADICIONAR AO CARRINHO</span>
+              </button>
+            </li>
+          ))}
+      </ProductList>
+    </>
   );
 }
 
