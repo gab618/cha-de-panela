@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { nanoid } from 'nanoid';
 
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -12,7 +13,7 @@ import Pix from '../../utils/Pix';
 
 import { Container, Total, SuccessContent } from './styles';
 
-function Checkout({ total, setStep }) {
+function Checkout({ total, setStep, cart }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [msg, setMsg] = useState('');
@@ -20,18 +21,25 @@ function Checkout({ total, setStep }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    const id = `CHA-${nanoid(4).toUpperCase()}`;
     const pix = new Pix(
       process.env.REACT_APP_PIX_KEY,
       msg,
       process.env.REACT_APP_PIX_NAME,
       process.env.REACT_APP_PIX_CITY,
-      'ID001',
+      id,
       total
     );
     setPixString(pix.getPayload());
-    console.log(pixString);
-    console.log(name);
-    console.log(phone);
+    let items = '';
+    cart.forEach((item) => {
+      const output = `${item.amount}x ${item.title}; `;
+      items += output;
+    });
+    const logPayment = `https://script.google.com/macros/s/AKfycbwO6mXURJZkqItBnuSyg9rzphlFNH6AevDhudd5bL56mCzDa6x8Qrom/exec?name=${name}&id=${id}&valor=${total}&msg=${msg}&telefone=${phone}&items=${items}`;
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.open('GET', logPayment, true);
+    xmlHttp.send(null);
   }
 
   const handleNameChange = (event) => {

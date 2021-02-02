@@ -2,14 +2,36 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.header`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 0px 15px;
+  min-height: 100px;
+  transition: background 0.5s ease 0s;
+  z-index: 10;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  margin: 50px 0;
-  img {
-    height: 60px;
+  -webkit-box-pack: center;
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+
+  > a {
+    font-size: 32px;
+    font-stretch: condensed;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Barlow;
+    margin-top: 0px;
+    color: rgb(34, 34, 34);
+    font-style: normal;
+    font-weight: 300;
   }
 `;
+
 export const Cart = styled(Link)`
   display: flex;
   align-items: center;

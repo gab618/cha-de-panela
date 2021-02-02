@@ -85,6 +85,28 @@ export const ProductTable = styled.table`
       background: rgba(0, 0, 0, 0.1);
     }
   }
+
+  @media (max-width: 576px) {
+    img {
+      height: 48px;
+    }
+    div {
+      flex-direction: column;
+
+    input {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 32px;
+      /* background: #1e2328; */
+      color: #666;
+    }
+
+    button {
+      background: none;
+      border: 0;
+      padding: 6px;
+    }
+  }
 `;
 
 export const Total = styled.div`
