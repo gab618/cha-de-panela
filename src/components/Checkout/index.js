@@ -105,7 +105,7 @@ function Checkout({ total, setStep, cart }) {
                   <span>TOTAL</span>
                   <strong>{formatBRL(total)}</strong>
                 </Total>
-                <div>
+                <div className="checkout-buttons">
                   <ButtonSecondary
                     text="Voltar"
                     type="button"

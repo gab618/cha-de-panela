@@ -6,6 +6,22 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      .checkout-buttons {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+
+        button {
+          width: 100%;
+          margin-top: 16px;
+          margin-left: 0;
+        }
+      }
+    }
 
     button {
       margin-left: 16px;
@@ -25,6 +41,11 @@ export const Total = styled.div`
     color: #333;
     font-size: 28px;
     margin-left: 5px;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    justify-content: space-between;
   }
 `;
 
@@ -65,4 +86,6 @@ export const CheckoutWrapper = styled.div`
   align-items: center;
   padding: 50px 95px;
   background: #fff;
+  @media (max-width: 768px) {
+    padding: 16px 24px;
 `;
