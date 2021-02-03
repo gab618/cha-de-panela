@@ -8,6 +8,7 @@ import * as CartActions from '../../store/modules/cart/actions';
 
 import {
   Container,
+  ProductTableWrapper,
   ProductTable,
   TotalContainer,
   TableHeader,
@@ -28,51 +29,56 @@ function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
 
   return (
     <Container>
-      <ProductTable>
-        <TableHeader>
-          <div className="desc">Descrição</div>
-          <div className="amount">Quantidade</div>
-          <div className="price">Valor</div>
-        </TableHeader>
+      <ProductTableWrapper>
+        <ProductTable>
+          <TableHeader>
+            <div className="desc">Descrição</div>
+            <div className="amount">Quantidade</div>
+            <div className="price">Valor</div>
+          </TableHeader>
 
-        {cart.map((product) => (
-          <TableItem key={product.id}>
-            <div className="desc">
-              <div className="img-wrapper">
-                <img src={product.image} alt={product.title} />
+          {cart.map((product) => (
+            <TableItem key={product.id}>
+              <div className="desc">
+                <div className="img-wrapper">
+                  <img src={product.image} alt={product.title} />
+                </div>
+                <p>{product.title}</p>
               </div>
-              <p>{product.title}</p>
-            </div>
 
-            <div className="amount">
-              <IncrementBox>
-                <button type="button" onClick={() => decrement(product)}>
-                  <MdRemoveCircleOutline size={20} />
-                </button>
-                <div>{product.amount}</div>
-                <button type="button" onClick={() => increment(product)}>
-                  <MdAddCircleOutline size={20} />
-                </button>
-              </IncrementBox>
-              <RemoveButton onClick={() => removeFromCart(product.id)}>
-                Remover
-              </RemoveButton>
-            </div>
+              <div className="amount">
+                <IncrementBox>
+                  <button type="button" onClick={() => decrement(product)}>
+                    <MdRemoveCircleOutline size={20} />
+                  </button>
+                  <div>{product.amount}</div>
+                  <button type="button" onClick={() => increment(product)}>
+                    <MdAddCircleOutline size={20} />
+                  </button>
+                </IncrementBox>
+                <RemoveButton onClick={() => removeFromCart(product.id)}>
+                  Remover
+                </RemoveButton>
+              </div>
 
+              <div className="price">
+                <div>{formatBRL(product.subtotal)}</div>
+              </div>
+            </TableItem>
+          ))}
+          <TotalContainer>
+            <div className="desc" />
+            <div className="amount">Total</div>
             <div className="price">
-              <div>{formatBRL(product.subtotal)}</div>
+              <strong>{formatBRL(total)}</strong>
             </div>
-          </TableItem>
-        ))}
-        <TotalContainer>
-          <div className="desc" />
-          <div className="amount">Total</div>
-          <div className="price">
-            <strong>{formatBRL(total)}</strong>
-          </div>
-        </TotalContainer>
-      </ProductTable>
+          </TotalContainer>
+        </ProductTable>
+      </ProductTableWrapper>
       <footer>
+        <button type="button" onClick={() => setStep(1)}>
+          adicionar presentes
+        </button>
         <button type="button" onClick={() => setStep(1)}>
           Próximo
         </button>

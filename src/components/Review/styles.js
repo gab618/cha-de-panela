@@ -27,17 +27,23 @@ export const Container = styled.div`
     }
   }
   width: 100%;
+  background: var(--lightBackground);
 `;
 
+export const ProductTableWrapper = styled.div`
+  width: 100%;
+  background: #fff;
+`;
 export const ProductTable = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 0;
   max-width: 1110px;
   display: flex;
   flex-direction: column;
   -webkit-box-align: center;
   align-items: center;
   padding: 0px 95px;
+  background: #fff;
 
   .desc {
     max-width: 60%;
