@@ -9,92 +9,10 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      background: #7159c1;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: background 0.25s;
-
-      &:hover {
-        background: ${darken(0.03, '#7159c1')};
-      }
-    }
-
-    .prev-button {
-      background: #888;
-      margin-right: 8px;
-      &:hover {
-        background: ${darken(0.03, '#888')};
-      }
+      margin-left: 16px;
     }
   }
 `;
-
-export const ProductTable = styled.table`
-  width: 100%;
-
-  thead th {
-    text-align: left;
-    padding: 12px;
-    color: #999;
-  }
-
-  tbody td {
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-  }
-
-  img {
-    height: 100px;
-  }
-
-  strong {
-    color: #333;
-    display: block;
-  }
-
-  span {
-    display: block;
-    margin-top: 5px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-
-    input {
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 6px;
-      width: 50px;
-      /* background: #1e2328; */
-      color: #666;
-    }
-
-    button {
-      background: none;
-      border: 0;
-      padding: 6px;
-    }
-  }
-  button {
-    background: none;
-    border: 0;
-    padding: 6px;
-
-    transition: background 0.25s;
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.1);
-    }
-  }
-`;
-
 export const Total = styled.div`
   display: flex;
   align-items: baseline;
@@ -136,4 +54,16 @@ export const SuccessContent = styled.div`
     font-size: 9px;
     color: #999;
   }
+`;
+
+export const CheckoutWrapper = styled.div`
+  width: 100%;
+  margin: 0 auto 0;
+  max-width: 1110px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 50px 95px;
+  background: #fff;
 `;

@@ -10,7 +10,7 @@ import Checkout from '../../components/Checkout';
 import StepsPanel from '../../components/StepsPanel';
 
 function Cart() {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
 
   function getStepContent(step) {
     switch (step) {
