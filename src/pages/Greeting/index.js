@@ -5,7 +5,7 @@ import Panel from '../../components/Panel';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-import { Container, Cover, Text } from './styles';
+import { Container, Cover, Text, Photo } from './styles';
 
 function Greeting() {
   return (
@@ -40,6 +40,12 @@ function Greeting() {
           <p>Matheus e Tamara</p>
         </section>
       </Text>
+
+      <Photo imgSrc="https://scontent.fcgh37-1.fna.fbcdn.net/v/t31.0-8/1277785_10151940056869884_1057468271_o.jpg?_nc_cat=103&ccb=2&_nc_sid=cdbe9c&_nc_eui2=AeElGq6-pMLqCmTmA4dUJ6A-W21lJpvGFulbbWUmm8YW6cy2_maRW2RoCe5-BQ5z2BQlnk9TlnyXhaXWh3bISNmm&_nc_ohc=fwFxDyXomZ4AX8NW8mo&_nc_ht=scontent.fcgh37-1.fna&oh=58439a9fdd168bc28ba2b5d748ff22cb&oe=603EF04A">
+        <div className="photo-wrapper">
+          <figure />
+        </div>
+      </Photo>
     </Container>
   );
 }

@@ -66,3 +66,19 @@ export const Text = styled.section`
     }
   }
 `;
+
+export const Photo = styled.div`
+  width: 100%;
+  .photo-wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    > figure {
+      padding-top: 56.25%;
+      background-image: ${(props) => `url(${props.imgSrc})`};
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+`;
