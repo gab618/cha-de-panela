@@ -7,6 +7,7 @@ import * as CartActions from '../../store/modules/cart/actions';
 import { Container } from './styles';
 import Review from '../../components/Review';
 import Checkout from '../../components/Checkout';
+import StepsPanel from '../../components/StepsPanel';
 
 function Cart() {
   const [step, setStep] = useState(0);
@@ -22,7 +23,12 @@ function Cart() {
     }
   }
 
-  return <Container>{getStepContent(step)}</Container>;
+  return (
+    <Container>
+      <StepsPanel />
+      {getStepContent(step)}
+    </Container>
+  );
 }
 
 const mapDispatchToProps = (dispatch) =>

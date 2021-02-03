@@ -11,6 +11,7 @@ import Header from './components/Header';
 
 import history from './services/history';
 import store from './store';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Router history={history}>
         <Header />
         <Routes />
+        <Footer />
         <GlobalStyle />
         <ToastContainer autoClose={5000} />
       </Router>
