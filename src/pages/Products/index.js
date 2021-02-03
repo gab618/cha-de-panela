@@ -10,7 +10,7 @@ import { ProductList } from './styles';
 import NewHomePanel from '../../components/NewHomePanel';
 import formatBRL from '../../utils/formatBRL';
 
-function Home({ amount, addToCartRequest }) {
+function Products({ amount, addToCartRequest }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -64,4 +64,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(CartActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
