@@ -14,6 +14,20 @@ export const Cover = styled.div`
     max-height: calc(100vh - 64px);
     top: -64px;
   }
+  .figure::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    background-image: ${(props) => `url(${props.imgSrc})`};
+    background-size: cover;
+    filter: brightness(75%);
+    z-index: -1;
+  }
 
   .cover-container {
     position: absolute;
@@ -32,10 +46,65 @@ export const Cover = styled.div`
     z-index: 1;
 
     > figure {
-      width: 100%;
-      height: 100%;
-      background-image: ${(props) => `url(${props.imgSrc})`};
-      background-size: cover;
+      /* position: relative; */
+      z-index: 15;
+      > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+
+        height: 100%;
+        max-width: 100%;
+
+        > strong {
+          color: #fff;
+          font-family: 'Barlow Condensed';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 88px;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          line-height: 1;
+          font-stretch: condensed;
+        }
+
+        > span {
+          font-size: 32px;
+          font-style: normal;
+          line-height: normal;
+          text-align: center;
+          font-weight: bold;
+          font-stretch: condensed;
+          letter-spacing: 2px;
+          color: var(--body);
+          margin-top: 24px;
+        }
+        .min-name {
+          display: none;
+        }
+        @media (max-width: 768px) {
+          > strong {
+            font-size: 48px;
+            /* font-weight: 300; */
+            font-stretch: normal;
+            letter-spacing: normal;
+          }
+
+          > span {
+            margin-top: 16px;
+            font-size: 20px;
+          }
+          .min-name {
+            display: block;
+          }
+          .full-name {
+            display: none;
+          }
+        }
+      }
     }
   }
 `;
