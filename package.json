@@ -14,6 +14,7 @@
     "nanoid": "^3.1.20",
     "polished": "^3.5.2",
     "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
     "react-qr-code": "^1.0.5",

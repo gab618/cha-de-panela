@@ -74,6 +74,32 @@ export const SuccessContent = styled.div`
     font-size: 9px;
     color: #999;
   }
+
+  .copy-button {
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    min-height: 56px;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    color: #000;
+    -webkit-appearance: none !important;
+    outline: none;
+    margin-top: 16px;
+    width: 256px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+
+    > span {
+      margin-right: 8px;
+    }
+  }
 `;
 
 export const CheckoutWrapper = styled.div`
