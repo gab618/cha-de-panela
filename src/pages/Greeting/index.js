@@ -5,7 +5,7 @@ import Panel from '../../components/Panel';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-import { Container, Cover } from './styles';
+import { Container, Cover, Text } from './styles';
 
 function Greeting() {
   return (
@@ -15,7 +15,31 @@ function Greeting() {
           <figure />
         </div>
       </Cover>
-      <Panel title="sobre nós" subtitle="#acasacaiu" />
+      <Panel
+        title="sobre nós"
+        subtitle="#acasacaiu"
+        text="***Alterar texto***"
+      />
+      <Text>
+        <section className="text-wrapper">
+          <p>
+            Não entendo esses caras que escrevem textão. Tá achando que isso
+            aqui é a Redação do Enem?
+          </p>
+          <p>
+            Aqui é chat da Twitch, se eu quisesse ler eu pegava um livro ao
+            invés de assistir livestream!
+          </p>
+          <p>
+            Gente assim não deve ter um pingo de bom senso pra escrever esses
+            textões, típico comportamento de sabichão que quer pagar de
+            inteligente na internet e se aparecer, quando na realidade só faz
+            passar vergonha, completamente ridículo...
+          </p>
+          <p>Aguardamos vocês no nosso grande dia!</p>
+          <p>Matheus e Tamara</p>
+        </section>
+      </Text>
     </Container>
   );
 }

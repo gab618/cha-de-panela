@@ -9,6 +9,12 @@ export const Cover = styled.div`
   max-height: calc(100vh - 100px);
   position: relative;
 
+  @media (max-width: 768px) {
+    margin-top: 64px;
+    max-height: calc(100vh - 64px);
+    top: -64px;
+  }
+
   .cover-container {
     position: absolute;
     top: 0px;
@@ -30,6 +36,33 @@ export const Cover = styled.div`
       height: 100%;
       background-image: ${(props) => `url(${props.imgSrc})`};
       background-size: cover;
+    }
+  }
+`;
+
+export const Text = styled.section`
+  width: 100%;
+  background: #fff;
+
+  .text-wrapper {
+    max-width: 1110px;
+    margin: 0px auto;
+    padding: 80px 15px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: 1px;
+    color: var(--content);
+    text-align: center;
+    overflow-wrap: break-word;
+
+    > p {
+      /* line-height: 107%; */
+      padding: 10px 0px;
+      clear: both;
     }
   }
 `;
