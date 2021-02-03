@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Container } from './styles';
 
-function ButtonSecondary({ text }) {
-  return <Container>{text}</Container>;
+function ButtonSecondary({ text, type }) {
+  return <Container type={type}>{text}</Container>;
 }
 
 export default ButtonSecondary;

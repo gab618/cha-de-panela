@@ -106,7 +106,11 @@ function Checkout({ total, setStep, cart }) {
                   <strong>{formatBRL(total)}</strong>
                 </Total>
                 <div>
-                  <ButtonSecondary text="Voltar" onClick={() => setStep(0)} />
+                  <ButtonSecondary
+                    text="Voltar"
+                    type="button"
+                    onClick={() => setStep(0)}
+                  />
                   <ButtonPrimary text="Finalizar" type="submit" />
                 </div>
               </footer>
