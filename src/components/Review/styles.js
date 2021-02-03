@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
 
 export const Container = styled.div`
   width: 100%;
@@ -14,20 +13,13 @@ export const Container = styled.div`
     padding: 0px 15px;
     margin: 40px auto 0px;
 
-    /* button {
-      background: #7209c1;
-      color: #ddd;
-      border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: background 0.25s;
-
-      &:hover {
-        background: ${darken(0.03, '#24494b')};
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      button {
+        width: 100%;
+        margin-bottom: 16px;
       }
-    } */
+    }
   }
 `;
 
@@ -46,11 +38,25 @@ export const ProductTable = styled.div`
   padding: 0px 95px;
   background: #fff;
 
+  @media (max-width: 768px) {
+    font-size: 12px;
+    font-weight: 300;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    padding: 0px 15px;
+  }
+
   .desc {
     max-width: 60%;
     width: 100%;
     display: flex;
     align-items: center;
+    @media (max-width: 768px) {
+      max-width: 50%;
+      padding-right: 15px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     .img-wrapper {
       margin-bottom: 24px;
@@ -79,6 +85,9 @@ export const ProductTable = styled.div`
       margin-left: 30px;
       text-align: left;
       line-height: 1.43;
+      @media (max-width: 768px) {
+        margin-left: 0px;
+      }
     }
   }
 
@@ -87,13 +96,33 @@ export const ProductTable = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    @media (max-width: 768px) {
+      max-width: 50%;
+      padding-left: 15px;
+    }
   }
+
   .price {
     max-width: 20%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .price-mobile {
+    display: none;
+    @media (max-width: 768px) {
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      max-width: 100%;
+      width: 100%;
+      margin-top: 40px;
+    }
   }
 `;
 export const TableHeader = styled.div`
@@ -111,6 +140,13 @@ export const TableHeader = styled.div`
   border-bottom: 1px solid var(--formBorder);
   margin-bottom: 26px;
   padding: 80px 0px 22px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    font-weight: 300;
+    font-stretch: normal;
+    letter-spacing: 1px;
+  }
 `;
 
 export const TableItem = styled.div`
@@ -194,5 +230,13 @@ export const TotalContainer = styled.div`
   strong {
     color: rgb(34, 34, 34);
     font-size: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .desc,
+    .amount,
+    .price {
+      display: none;
+    }
   }
 `;

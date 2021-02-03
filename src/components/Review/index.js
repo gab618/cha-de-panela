@@ -67,6 +67,10 @@ function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
               <div className="price">
                 <div>{formatBRL(product.subtotal)}</div>
               </div>
+              <div className="price-mobile">
+                <span>Valor</span>
+                <div>{formatBRL(product.subtotal)}</div>
+              </div>
             </TableItem>
           ))}
           <TotalContainer>
@@ -74,6 +78,10 @@ function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
             <div className="amount">Total</div>
             <div className="price">
               <strong>{formatBRL(total)}</strong>
+            </div>
+            <div className="price-mobile">
+              <div>Total</div>
+              <div>{formatBRL(total)}</div>
             </div>
           </TotalContainer>
         </ProductTable>

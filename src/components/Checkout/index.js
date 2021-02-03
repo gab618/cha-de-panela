@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import QRCode from 'react-qr-code';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FaCopy, FaCheckCircle } from 'react-icons/fa';
 import * as CartActions from '../../store/modules/cart/actions';
 import formatBRL from '../../utils/formatBRL';
 import Pix from '../../utils/Pix';
@@ -20,6 +22,7 @@ function Checkout({ total, setStep, cart }) {
   const [phone, setPhone] = useState('');
   const [msg, setMsg] = useState('');
   const [pixString, setPixString] = useState('');
+  const [copied, setCopied] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -54,6 +57,13 @@ function Checkout({ total, setStep, cart }) {
   };
   const handleMsgChange = (event) => {
     setMsg(event.target.value);
+  };
+
+  const handleCopyQR = () => {
+    setTimeout(() => {
+      setCopied(false);
+    }, 1 * 1000);
+    setCopied(true);
   };
 
   return (
@@ -105,7 +115,7 @@ function Checkout({ total, setStep, cart }) {
                   <span>TOTAL</span>
                   <strong>{formatBRL(total)}</strong>
                 </Total>
-                <div>
+                <div className="checkout-buttons">
                   <ButtonSecondary
                     text="Voltar"
                     type="button"
@@ -120,9 +130,24 @@ function Checkout({ total, setStep, cart }) {
           <SuccessContent>
             <h2>Muito obrigado pelo presente, {name}!</h2>
             <QRCode value={pixString} />
+            <CopyToClipboard text={pixString} onCopy={handleCopyQR}>
+              <button className="copy-button" type="button">
+                {copied ? (
+                  <>
+                    <span>Copiado</span>
+                    <FaCheckCircle size={18} />
+                  </>
+                ) : (
+                  <>
+                    <span>Copiar código QR</span>
+                    <FaCopy size={18} />
+                  </>
+                )}
+              </button>
+            </CopyToClipboard>
             <span>
-              Para finalizar, basta realizar o pagamento escaneando o código Pix
-              abaixo :)
+              Para finalizar, basta realizar o pagamento escaneando ou colando o
+              código Pix acima :)
             </span>
             <p>
               Caso alguma coisa de errado, minha chave pix é{' '}
