@@ -19,7 +19,7 @@ function Header({ cartSize }) {
         <Menu>
           <MenuWrapper>
             <li>
-              <MenuItem to="/">
+              <MenuItem to="/shop">
                 <div>
                   <strong>Presentes</strong>
                 </div>

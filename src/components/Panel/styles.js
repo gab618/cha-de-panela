@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 `;
 
-export const NewHomeTitleText = styled.div`
+export const TitleText = styled.div`
   width: 100%;
   min-height: 78px;
   height: 100%;
@@ -34,7 +34,7 @@ export const NewHomeTitleText = styled.div`
   }
 `;
 
-export const NewHomeSubtitleText = styled.div`
+export const SubtitleText = styled.div`
   width: 100%;
   min-height: 70px;
   height: 100%;
@@ -56,7 +56,7 @@ export const NewHomeSubtitleText = styled.div`
   }
 `;
 
-export const NewHomeTextWrapper = styled.section`
+export const TextWrapper = styled.section`
   width: 100%;
   max-width: 1110px;
   margin: 0px auto;

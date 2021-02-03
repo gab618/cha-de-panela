@@ -87,7 +87,7 @@ function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
         </ProductTable>
       </ProductTableWrapper>
       <footer>
-        <Link to="/">
+        <Link to="/shop">
           <ButtonSecondary text="adicionar presentes" />
         </Link>
         <ButtonPrimary text="próximo passo" onClick={() => setStep(1)} />

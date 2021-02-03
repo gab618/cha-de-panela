@@ -7,7 +7,8 @@ export default createGlobalStyle`
     padding: 0;
     outline:0;
     box-sizing: border-box;
-    color: var(--main)
+    color: var(--main);
+    max-width: 100%;
   }
 
   body {

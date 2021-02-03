@@ -7,10 +7,10 @@ import db from '../../db.json';
 import * as CartActions from '../../store/modules/cart/actions';
 
 import { ProductList } from './styles';
-import NewHomePanel from '../../components/NewHomePanel';
+import Panel from '../../components/Panel';
 import formatBRL from '../../utils/formatBRL';
 
-function Home({ amount, addToCartRequest }) {
+function Products({ amount, addToCartRequest }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,10 @@ function Home({ amount, addToCartRequest }) {
 
   return (
     <>
-      <NewHomePanel />
+      <Panel
+        title="CASA NOVA"
+        text="Ficaremos muito felizes com a contribuição de vocês para montar o nosso lar :)"
+      />
       <ProductList>
         {products &&
           products.map((product) => (
@@ -64,4 +67,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(CartActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
