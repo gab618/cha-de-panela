@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 
+import { Link } from 'react-router-dom';
 import * as CartActions from '../../store/modules/cart/actions';
 
 import {
@@ -17,6 +18,8 @@ import {
   RemoveButton,
 } from './styles';
 import formatBRL from '../../utils/formatBRL';
+import ButtonPrimary from '../ButtonPrimary';
+import ButtonSecondary from '../ButtonSecondary';
 
 function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
   function increment(product) {
@@ -76,12 +79,10 @@ function Review({ cart, total, removeFromCart, updateAmountRequest, setStep }) {
         </ProductTable>
       </ProductTableWrapper>
       <footer>
-        <button type="button" onClick={() => setStep(1)}>
-          adicionar presentes
-        </button>
-        <button type="button" onClick={() => setStep(1)}>
-          Próximo
-        </button>
+        <Link to="/">
+          <ButtonSecondary text="adicionar presentes" />
+        </Link>
+        <ButtonPrimary text="próximo passo" onClick={() => setStep(1)} />
       </footer>
     </Container>
   );

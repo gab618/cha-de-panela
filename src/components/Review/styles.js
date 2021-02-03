@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
+  width: 100%;
+  background: var(--lightBackground);
+
   footer {
     display: flex;
     -webkit-box-pack: justify;
@@ -11,7 +14,7 @@ export const Container = styled.div`
     padding: 0px 15px;
     margin: 40px auto 0px;
 
-    button {
+    /* button {
       background: #7209c1;
       color: #ddd;
       border: 0;
@@ -24,10 +27,8 @@ export const Container = styled.div`
       &:hover {
         background: ${darken(0.03, '#24494b')};
       }
-    }
+    } */
   }
-  width: 100%;
-  background: var(--lightBackground);
 `;
 
 export const ProductTableWrapper = styled.div`

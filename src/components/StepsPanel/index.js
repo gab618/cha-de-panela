@@ -1,12 +1,7 @@
 import React from 'react';
 import WaveSvg from '../WaveSvg';
 
-import {
-  Container,
-  StepsTitleText,
-  StepsSubtitleText,
-  StepsTextWrapper,
-} from './styles';
+import { Container, StepsTitleText, StepsSubtitleText } from './styles';
 
 function StepsPanel() {
   return (
