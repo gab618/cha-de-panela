@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Countdown from '../../components/Countdown';
 import Panel from '../../components/Panel';
 
 import * as CartActions from '../../store/modules/cart/actions';
@@ -21,6 +22,7 @@ function Greeting() {
           </figure>
         </div>
       </Cover>
+      <Countdown />
       <Panel
         title="sobre nós"
         subtitle="#acasacaiu"
