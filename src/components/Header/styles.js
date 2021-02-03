@@ -16,6 +16,9 @@ export const Container = styled.header`
   justify-content: space-between;
   background: rgb(255, 255, 255);
   border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+  @media (max-width: 768px) {
+    min-height: 64px;
+  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -80,6 +83,9 @@ export const MenuWrapper = styled.ul`
           -webkit-box-align: center;
           align-items: center;
           font-family: Poppins;
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
     }
