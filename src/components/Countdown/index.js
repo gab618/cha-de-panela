@@ -4,7 +4,7 @@ import { Container, FlipperContainer, Flipper } from './styles';
 
 function Countdown() {
   // Set the date we're counting down to
-  const countDownDate = new Date('Mar 23, 2021 13:00:00').getTime();
+  const countDownDate = new Date('Mar 26, 2021 11:00:00').getTime();
   const [nowDate, setCurrentDate] = useState(new Date());
 
   const [seconds, setSeconds] = useState();

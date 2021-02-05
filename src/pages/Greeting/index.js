@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import Countdown from '../../components/Countdown';
+import FancySvg from '../../components/FancySvg';
 import Panel from '../../components/Panel';
+import ButtonPrimary from '../../components/ButtonPrimary';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
@@ -17,7 +20,7 @@ function Greeting() {
             <div>
               <strong className="full-name">MATHEUS & TAMARA</strong>
               <strong className="min-name">M & T</strong>
-              <span>xx.03.2021</span>
+              <span>26.03.2021</span>
             </div>
           </figure>
         </div>
@@ -25,27 +28,27 @@ function Greeting() {
       <Countdown />
       <Panel
         title="sobre nós"
-        subtitle="#acasacaiu"
-        text="***Alterar texto***"
+        subtitle="#casoriomatheusetamara___#acasacaiu"
+        text="Olá, seja bem-vindo ao nosso site de casamento!___Aqui vamos contar à vocês, queridos amigos e familiares, sobre um pouquinho da nossa vida antes desse momento especial em que daremos esse passo a mais para unirmos nossas vidas. É um prazer compartilhar esse momento com você!___No início trabalhávamos juntos na mesma empresa e nos conhecemos através de outros colegas de trabalho, então uma grande amizade surgiu, não imaginaríamos nunca que seria desse jeito, mas depois essa amizade acabou se tornando paixão que rendeu um fruto de amor que cresceu e floresceu.___Nossa história juntos começou no dia 24 de maio de 2013 e depois de quase 8 anos (do noivo enrolando) nós vamos casar! A contagem regressiva começa, o frio na barriga e toda a ansiedade do dia mais esperado de nossas vidas nos enche de alegria, o dia em que uniremos nossas almas e corpos para sempre, o dia do nosso casamento."
       />
       <Text>
         <section className="text-wrapper">
+          {/* <h2>AVISO</h2> */}
           <p>
-            Não entendo esses caras que escrevem textão. Tá achando que isso
-            aqui é a Redação do Enem?
+            Nada nos deixaria mais felizes do que compartilhar com todos vocês o
+            momento da nossa união! Mas nem sempre a vida permite que nossos
+            planos aconteçam como sonhamos.
           </p>
           <p>
-            Aqui é chat da Twitch, se eu quisesse ler eu pegava um livro ao
-            invés de assistir livestream!
+            Devido ao atual momento que estamos vivendo, decidimos não reunir
+            muitas pessoas na celebração da nossa união, mas não é um motivo
+            para deixarmos de comemorar este momento único nas nossas vidas.
           </p>
           <p>
-            Gente assim não deve ter um pingo de bom senso pra escrever esses
-            textões, típico comportamento de sabichão que quer pagar de
-            inteligente na internet e se aparecer, quando na realidade só faz
-            passar vergonha, completamente ridículo...
+            Obrigado por reservar o seu tempo e nos dar o seu carinho. Iremos
+            lembrar para sempre deste momento tão esperado.
           </p>
-          <p>Aguardamos vocês no nosso grande dia!</p>
-          <p>Matheus e Tamara</p>
+          <FancySvg />
         </section>
       </Text>
 
@@ -54,6 +57,11 @@ function Greeting() {
           <figure />
         </div>
       </Photo>
+      <div className="button-container">
+        <Link to="/shop">
+          <ButtonPrimary type="button" text="Ver presentes" />
+        </Link>
+      </div>
     </Container>
   );
 }

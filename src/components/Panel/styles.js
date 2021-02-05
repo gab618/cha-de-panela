@@ -20,6 +20,7 @@ export const TitleText = styled.div`
   min-height: 78px;
   height: 100%;
   padding: 20px 15px;
+
   > h2 {
     font-size: 32px;
     font-weight: 500;
@@ -56,11 +57,11 @@ export const SubtitleText = styled.div`
   }
 `;
 
-export const TextWrapper = styled.section`
+export const TextWrapper = styled.p`
   width: 100%;
   max-width: 1110px;
   margin: 0px auto;
-  padding: 80px 15px;
+  padding: 15px 15px;
   font-family: Poppins;
   font-size: 14px;
   font-weight: 300;
