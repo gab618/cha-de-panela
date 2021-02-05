@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
-export const Container = styled.main``;
+export const Container = styled.main`
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 16px;
+  }
+`;
 
 export const Cover = styled.div`
   margin-top: 100px;
@@ -132,6 +140,10 @@ export const Text = styled.section`
       /* line-height: 107%; */
       padding: 10px 0px;
       clear: both;
+    }
+
+    > h2 {
+      font-weight: 500;
     }
   }
 `;

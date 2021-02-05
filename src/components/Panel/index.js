@@ -13,13 +13,13 @@ function Panel({ title, subtitle, text }) {
         <h2>{title}</h2>
       </TitleText>
       <SubtitleText>
-        {arraySub && arraySub?.map((sub) => <h3>{sub}</h3>)}
+        {arraySub && arraySub?.map((sub) => <h3 key={sub}>{sub}</h3>)}
       </SubtitleText>
       <WaveSvg />
 
       {arrayText && arrayText.length <= 1 && <div className="blank-space" />}
       {arrayText.map((line) => (
-        <TextWrapper>{line}</TextWrapper>
+        <TextWrapper key={line}>{line}</TextWrapper>
       ))}
       <div className="blank-space" />
     </Container>

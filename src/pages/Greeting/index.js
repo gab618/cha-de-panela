@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import Countdown from '../../components/Countdown';
+import FancySvg from '../../components/FancySvg';
 import Panel from '../../components/Panel';
+import ButtonPrimary from '../../components/ButtonPrimary';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
@@ -30,17 +33,22 @@ function Greeting() {
       />
       <Text>
         <section className="text-wrapper">
+          {/* <h2>AVISO</h2> */}
           <p>
-            Nada nos deixaria mais felizes que compartilhar com todos vocês o
-            momento da nossa união, mas nem sempre a vida permite que nossos
+            Nada nos deixaria mais felizes do que compartilhar com todos vocês o
+            momento da nossa união! Mas nem sempre a vida permite que nossos
             planos aconteçam como sonhamos.
           </p>
           <p>
             Devido ao atual momento que estamos vivendo, decidimos não reunir
-            muitas pessoas na celebração da nossa união.
+            muitas pessoas na celebração da nossa união, mas não é um motivo
+            para deixarmos de comemorar este momento único nas nossas vidas.
           </p>
-          <p>Aguardamos vocês no nosso grande dia!</p>
-          <p>Matheus e Tamara</p>
+          <p>
+            Obrigado por reservar o seu tempo e nos dar o seu carinho. Iremos
+            lembrar para sempre deste momento tão esperado.
+          </p>
+          <FancySvg />
         </section>
       </Text>
 
@@ -49,6 +57,11 @@ function Greeting() {
           <figure />
         </div>
       </Photo>
+      <div className="button-container">
+        <Link to="/shop">
+          <ButtonPrimary type="button" text="Ver presentes" />
+        </Link>
+      </div>
     </Container>
   );
 }
