@@ -20,6 +20,7 @@ export const TitleText = styled.div`
   min-height: 78px;
   height: 100%;
   padding: 20px 15px;
+
   > h2 {
     font-size: 32px;
     font-weight: 500;
