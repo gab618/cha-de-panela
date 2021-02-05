@@ -28,7 +28,7 @@ function Header({ cartSize }) {
             </li>
             <div className="divider" />
             <li>
-              <MenuItem to="/cart" show={!!cartSize}>
+              <MenuItem to="/cart" show={cartSize ? 1 : undefined}>
                 <div>
                   <strong>Meu carrinho</strong>
                   <span className="items-counter">{cartSize}</span>
