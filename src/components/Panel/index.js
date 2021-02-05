@@ -4,6 +4,7 @@ import WaveSvg from '../WaveSvg';
 import { Container, TitleText, SubtitleText, TextWrapper } from './styles';
 
 function Panel({ title, subtitle, text }) {
+  const arrayText = text.split('___');
   return (
     <Container>
       <div className="blank-space" />
@@ -14,7 +15,10 @@ function Panel({ title, subtitle, text }) {
         <h3>{subtitle}</h3>
       </SubtitleText>
       <WaveSvg />
-      <TextWrapper>{text}</TextWrapper>
+      {arrayText.map((line) => (
+        <TextWrapper>{line}</TextWrapper>
+      ))}
+      <div className="blank-space" />
     </Container>
   );
 }
