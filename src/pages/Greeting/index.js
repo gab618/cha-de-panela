@@ -20,7 +20,7 @@ function Greeting() {
             <div>
               <strong className="full-name">MATHEUS & TAMARA</strong>
               <strong className="min-name">M & T</strong>
-              <span>xx.03.2021</span>
+              <span>26.03.2021</span>
             </div>
           </figure>
         </div>

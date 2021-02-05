@@ -10,7 +10,7 @@ function StepsPanel() {
         <h2>MATHEUS & TAMARA</h2>
       </StepsTitleText>
       <StepsSubtitleText>
-        <h3>xx de fevereiro de 2021</h3>
+        <h3>26 de março de 2021</h3>
       </StepsSubtitleText>
       <WaveSvg />
     </Container>
