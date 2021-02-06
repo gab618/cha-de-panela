@@ -8,7 +8,7 @@ function Footer() {
   useEffect(() => {
     async function getViews() {
       fetch(
-        'https://api.countapi.xyz/hit/matheusetaaaamara.netlify.app/visits'
+        'https://api.countapi.xyz/hit/matheusetaaaaaamara.netlify.app/visits'
       ).then(async (response) => {
         const data = await response.json();
         setViewCount(data.value);
