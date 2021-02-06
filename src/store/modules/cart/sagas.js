@@ -25,7 +25,7 @@ function* addToCart({ id }) {
   if (productExists) {
     yield put(updateAmountSuccess(id, amount));
   } else {
-    const response = db[id - 1];
+    const response = db.find((x) => x.id === id);
 
     const data = {
       ...response,
