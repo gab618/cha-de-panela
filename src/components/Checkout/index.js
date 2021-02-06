@@ -121,7 +121,7 @@ function Checkout({ total, setStep, cart }) {
                     type="button"
                     onClick={() => setStep(0)}
                   />
-                  <ButtonPrimary text="Finalizar" type="submit" />
+                  <ButtonPrimary text="próximo passo" type="submit" />
                 </div>
               </footer>
             </form>
