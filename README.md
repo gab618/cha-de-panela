@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/gab618/lol-shop">
+  <a href="https://github.com/gab618/cha-de-panela">
     <img src="http://cdn5.colorir.com/desenhos/color/201748/panela-a-casa-a-cozinha-1422935.jpg" alt="Logo" height="80">
   </a>
 
@@ -22,8 +22,11 @@
 ## Sobre o projeto
 
 <div align="center">
-    <img src="https://media3.giphy.com/media/DuxqBzEI50U54qfctS/giphy.gif">
+  <a href="https://matheusetamara.netlify.app">
+    <img src="https://media3.giphy.com/media/DuxqBzEI50U54qfctS/giphy.gif" width="100%">
+  </a>
 </div>
+<br />
 
 Chá de Panela virtual em formato de e-commerce com produtos divertidos e pagamento em Pix. Dedicado ao casamento do meu querido irmão <3
 
