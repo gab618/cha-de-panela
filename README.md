@@ -1,19 +1,19 @@
-<!-- PROJECT LOGO -->
+ma<!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/gab618/lol-shop">
-    <img src="https://lolshop.netlify.app/static/media/logo.61b525b2.png" alt="Logo" height="80">
+    <img src="http://cdn5.colorir.com/desenhos/color/201748/panela-a-casa-a-cozinha-1422935.jpg" alt="Logo" height="80">
   </a>
 
-  <h1 align="center">LolShop</h1>
+  <h1 align="center">Chá de Panela Virtual</h1>
 
   <p align="center">
-    League of Legends items ecommerce (front-end only) !
+    Chá de Panela virtual em formato de e-commerce
     <br />
-    <a href="https://github.com/gab618/lol-shop"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/gab618/cha-de-panela"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://lolshop.netlify.app/">View Demo</a>
+    <a href="https://matheusetamara.netlify.app">Site</a>
   </p>
 </p>
 
@@ -21,13 +21,13 @@
 
 ## Sobre o projeto
 
-[![GitHub Clone Screenshot][product-screenshot]](https://lolshop.netlify.app/)
+[![Screenshot][product-screenshot]](https://matheusetamara.netlify.app/)
 
-Front-end de ecommerce que possui como produtos alguns itens do League of Legends. O objetivo do projeto foi aplicar os conhecimentos de redux e redux-saga dentro do React.
+Chá de Panela virtual em formato de e-commerce com produtos divertidos e pagamento em Pix. Dedicado ao casamento do meu querido irmão <3
 
 ### Techs
 
-- React,js
+- React.js
 - Styled Components
 - Redux
 - Redux-saga
@@ -70,4 +70,4 @@ Gabriel - [@ezrealblindado](https://twitter.com/ezrealblindado) - gabrielrocha19
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: https://media.giphy.com/media/Us4bHYYltM0CDYbcYc/giphy.gif
+[product-screenshot]: https://media3.giphy.com/media/DuxqBzEI50U54qfctS/giphy.gif
