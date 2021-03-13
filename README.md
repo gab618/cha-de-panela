@@ -1,4 +1,4 @@
-ma<!-- PROJECT LOGO -->
+<!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/gab618/lol-shop">
@@ -21,7 +21,9 @@ ma<!-- PROJECT LOGO -->
 
 ## Sobre o projeto
 
-[![Screenshot][product-screenshot]](https://matheusetamara.netlify.app/)
+<div align="center">
+    <img src="https://media3.giphy.com/media/DuxqBzEI50U54qfctS/giphy.gif">
+</div>
 
 Chá de Panela virtual em formato de e-commerce com produtos divertidos e pagamento em Pix. Dedicado ao casamento do meu querido irmão <3
 
